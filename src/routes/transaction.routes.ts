@@ -8,6 +8,7 @@ router.post("/checkout", upload.single("image"), createTransaction);
 router.get("/", authenticate, getTransactions);
 router.get("/:id", getTransactionsById);
 router.patch("/:id", authenticate, updateTransaction);
+router.put("/:id", authenticate, upload.none(), updateTransaction);
 
 export default router;
 
